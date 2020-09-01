@@ -3,8 +3,8 @@ import random
 total = 0
 tries = 100000
 
-die = 4
-num = 15
+die = 6
+num = 8
 
 save = True
 advantage = False

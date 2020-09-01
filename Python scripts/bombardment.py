@@ -2,7 +2,7 @@ import random
 total = 0
 
 die = 6
-times = 9
+times = 8
 flames = True
 test = 2
 attempts = 100000
