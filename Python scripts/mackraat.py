@@ -86,7 +86,7 @@ print("KRaat: " + str(krdam/tries) + " per turn")
 macdam = 0
 for i in range(0, tries):
     num = 1
-    if Scatter and i % 8 == 0:
+    if Scatter and i % 3 == 0:
         num = 2
     rAC = AC
     if SS:
@@ -110,8 +110,8 @@ for i in range(0, tries):
             macdam += doRoll(8) + bonus
             if SS: 
                 macdam += 10
-            if num == 2:
-                macdam += doRoll(10)
+            '''if num == 2:
+                macdam += doRoll(10)'''
             if not usedSneak:
                 usedSneak = True
                 for r in range(0, sneak):
@@ -181,20 +181,18 @@ for i in range(0, tries):
             krdam += doRoll(8) + 3
     if i % 3 == 0:
         krdam += 40
+    elif i % 8 == 7:
+        krdam += (doRoll(12) + doRoll(12) + doRoll(12)) * 1.5
     else:
         roll = doRoll(20)
         if roll == 1:
             pass
         elif roll == 20:
             krdam += doRoll(6) + doRoll(6) + bonus + doRoll(8) + doRoll(8) +2
-            if i % 2 == 0:
-                krdam += doRoll(6) + doRoll(6)
             if i % 3 == 0:
                 krdam += doRoll(8) + doRoll(8)
         elif roll + prof + bonus >= AC:
             krdam += doRoll(6) + bonus + doRoll(8) +2
-            if i % 2 == 0:
-                krdam += doRoll(6)
             if i % 3 == 0:
                 krdam += doRoll(8) + doRoll(8)
 print("Krivkash: " + str(krdam/tries) + " per turn")
